@@ -2,7 +2,7 @@ wandb:
   log: True
   entity: "mytm20126"
   project: "llm_leaderboard_v2"
-  run_name: 'mistral-rakutenai-test-0517' # ご自身のteam名(weblab-geniac{N}, Nは1~8)の後(/以降)、実験管理用にお好きな名前をつけてください
+  run_name: 'mistral-rakutenai-test-0518' # ご自身のteam名(weblab-geniac{N}, Nは1~8)の後(/以降)、実験管理用にお好きな名前をつけてください
 
 github_version: v2.0.0 #for recording
 
@@ -69,7 +69,7 @@ mtbench:
   max_gpu_memory: null
   dtype: bfloat16 # None or float32 or float16 or bfloat16
   # for gen_judgment
-  judge_model: "gpt-4"
+  judge_model: "gpt-3.5-turbo" # 検証のため軽いモデルに
   mode: "single"
   baseline_model: null
   parallel: 1
