@@ -38,7 +38,7 @@ dataset_dir: "/jaster/1.1.0/evaluation/test"
 target_dataset: "all" # {all, jamp, janli, jcommonsenseqa, jemhopqa, jnli, jsem, jsick, jsquad, jsts, niilc, chabsa}
 log_dir: "./logs"
 torch_dtype: "bf16" # {fp16, bf16, fp32}
-custom_prompt_template: null
+custom_prompt_template: "<s>以下は、タスクを説明する指示と、文脈のある入力の組み合わせです。要求を適切に満たす応答を書きなさい。\n\n### 指示:\n{instruction}\n\n### 入力:\n{input}\n\n### 応答:\n"
 
 custom_fewshots_template: null
 # Please include {input} and {output} as variables
@@ -81,7 +81,7 @@ mtbench:
   conv_system_message: "以下は、タスクを説明する指示と、文脈のある入力の組み合わせです。要求を適切に満たす応答を書きなさい。"
   conv_roles: "('指示', '応答')"
   conv_sep: "\n\n### "
-  conv_stop_token_ids: "[2]"
-  conv_stop_str: "###"
-  conv_role_message_separator: ": \n"
-  conv_role_only_separator: ": \n"
+  conv_stop_token_ids: "[2]" # おそらく使われていない
+  conv_stop_str: "###" # おそらく使われていない
+  conv_role_message_separator: ":\n" # llm-jp-evalに合わせてスペースは削除
+  conv_role_only_separator: ":\n" # llm-jp-evalに合わせてスペースは削除
